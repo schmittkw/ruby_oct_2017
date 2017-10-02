@@ -21,8 +21,6 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 NOTE: If you don't get in at least one pull request daily, then *_ya ain't serious_*.
 
 ## Videos
-Coming soon...
-
 Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
 
 ## Resources
