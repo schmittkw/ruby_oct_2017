@@ -23,6 +23,8 @@ NOTE: If you don't get in at least one pull request daily, then *_ya ain't serio
 ## Videos
 Coming soon...
 
+Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
+
 ## Resources
 
 http://guides.rubyonrails.org/index.html
