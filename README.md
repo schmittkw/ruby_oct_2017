@@ -25,9 +25,9 @@ Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
 
 ## Resources
 
-http://guides.rubyonrails.org/index.html
+[Rails v4.2.7 Documentation](http://guides.rubyonrails.org/v4.2/ "Rails v4.2.7 Documentation") <br>
 
-http://ruby-doc.org/core-2.3.1/
+[Ruby v2.3.1 Documentation](http://ruby-doc.org/core-2.3.1/ "Ruby v2.3.1 Documentation") <br>
 
 [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide "Ruby Style Guide") <br>
 
