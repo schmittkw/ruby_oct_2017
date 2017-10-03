@@ -25,9 +25,11 @@ Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
 
 ## Resources
 
-http://guides.rubyonrails.org/index.html
+[Ruby v2.3.1 Documentation](http://ruby-doc.org/core-2.3.1/ "Ruby v2.3.1 Documentation") <br>
 
-http://ruby-doc.org/core-2.3.1/
+[Rails v4.2.7 Documentation](http://guides.rubyonrails.org/v4.2/ "Rails v4.2.7 Documentation") <br>
+
+[Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide "Ruby Style Guide") <br>
 
 http://www.rubyinside.com/
 
@@ -39,19 +41,19 @@ http://api.rubyonrails.org/classes/ActiveModel/Validations/HelperMethods.html
 
 ## Articles
 
-https://gist.github.com/MilanGrubnic70/11092705
+[Puts vs. Print vs. P](https://gist.github.com/MilanGrubnic70/11092705 "Puts vs. Print vs. P") <br>
 
-http://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes
+[Understanding Ruby Blocks](http://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes "Understanding Ruby Blocks") <br>
 
-http://www.spacevatican.org/2008/5/6/creating-multiple-associations-with-the-same-table/
+[Creating Multiple Associations with the Same Table](http://www.spacevatican.org/2008/5/6/creating-multiple-associations-with-the-same-table/ "Creating Multiple Associations with the Same Table") <br>
 
-https://launchschool.com/blog/understanding-polymorphic-associations-in-rails
+[Understanding Polymorphic Associations](https://launchschool.com/blog/understanding-polymorphic-associations-in-rails "Understanding Polymorphic Associations") <br>
 
-https://robots.thoughtbot.com/whats-the-deal-with-rails-polymorphic-associations
+[What's the Deal With Polymorphic Associations?](https://robots.thoughtbot.com/whats-the-deal-with-rails-polymorphic-associations "What's the Deal With Polymorphic Associations?") <br>
 
-http://culttt.com/2016/01/13/creating-polymorphic-relationships-in-ruby-on-rails/
+[Creating Polymorphic Associations in Rails](http://culttt.com/2016/01/13/creating-polymorphic-relationships-in-ruby-on-rails/ "Creating Polymorphic Associations in Rails") <br>
 
-http://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks
+[Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks "Active Record Callbacks") <br>
 
 An important note:
 *before_save* is called every time an object is saved. So for new and existing objects. (create and update action)
