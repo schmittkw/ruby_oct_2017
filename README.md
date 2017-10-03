@@ -29,6 +29,8 @@ http://guides.rubyonrails.org/index.html
 
 http://ruby-doc.org/core-2.3.1/
 
+[Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide "Ruby Style Guide") <br>
+
 http://www.rubyinside.com/
 
 https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
