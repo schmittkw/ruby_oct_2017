@@ -39,7 +39,7 @@ http://api.rubyonrails.org/classes/ActiveModel/Validations/HelperMethods.html
 
 ## Articles
 
-https://gist.github.com/MilanGrubnic70/11092705
+[Puts vs. Print vs. P](https://gist.github.com/MilanGrubnic70/11092705 "Puts vs. Print vs. P") <br>
 
 http://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes
 
