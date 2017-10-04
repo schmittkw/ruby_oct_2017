@@ -1,6 +1,6 @@
 # Coding Dojo - Ruby on Rails October 2017
 
-Welcome rubyists 
+Welcome Rubyists 
 
 > “Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run faster. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.”
 - Yukihiro Matsumoto
@@ -11,6 +11,9 @@ Welcome rubyists
  2. Clone it locally onto your laptop.
  3. Create a folder with your name, ex: cody_williams
  4. Add *this* (https://github.com/CodingDojoDallas/ruby_oct_2017/) repo as a REMOTE to your locally cloned copy.
+```
+git remote add upstream https://github.com/codingdojodallas/ruby_oct_2017
+```
  5. Profit!
 # Daily Commits
 
@@ -30,6 +33,8 @@ Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
 [Rails v4.2.7 Documentation](http://guides.rubyonrails.org/v4.2/ "Rails v4.2.7 Documentation") <br>
 
 [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide "Ruby Style Guide") <br>
+
+[Active Record Validations](http://guides.rubyonrails.org/active_record_validations.html "Active Record Validations") <br>
 
 http://www.rubyinside.com/
 
