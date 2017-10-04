@@ -23,11 +23,6 @@ class Deck
   end
 
 end
-deck = Deck.new
-# p deck.cards
-#deck.shuffle
-p deck.deal(2)
-p deck.cards.count
 
 class Player
   attr_reader :hand
@@ -47,51 +42,60 @@ class Player
   end
 end
 
-player1 = Player.new("Tom")
-player1.draw(deck, 5)
-p player1.hand
-player1.discard 3
-p player1.hand
+# player1 = Player.new("Tom")
+# player1.draw(deck, 5)
+# p player1.hand
+# player1.discard 3
+# p player1.hand
 
-#start game logic
 
-deck.reset
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# -------------------GAME START------------------------
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+def add_hand hand 	#helper method, adds up a hand's value
+	sum = 0
+	num_aces = 0
+	hand.each do |suit, value| 
+		sum += value unless value.class == "".class
+		sum += 10 if ["K","Q","J"].include?(value)
+		num_aces+=1 if value == "A"
+		# p "num aces#{num_aces}"
+		# p "sum#{sum}"
+	end
+	num_aces.times do |i|
+		if (sum + 11) < 21
+			# p "case 1"
+			sum += 11
+		elsif (sum + 11) == 21 and i+1 == num_aces #only if its the last ace
+			# p "case 2"
+			sum += 11
+		else
+			# p "case 3"
+			sum += 1
+		end
+		# p "sum: #{sum}"
+	end
+	sum
+end
+
+system "clear" or system "cls" #tries to clear the terminal 2 different ways
+
+deck = Deck.new
+deck.shuffle
+
 print "enter a name: "
 name = gets.chomp
 player1 = Player.new(name)
 p "your name is #{player1.name}"
 dealer = Player.new("Dealer")
 
-def add_hand hand
-	sum = 0
-	num_aces = 0
-		hand.each do |suit, value| 
-			sum += value if value.class == 1.class
-			sum += 10 if ["K","Q","J"].include?(value)
-			num_aces+=1 if value == "A"
-			p "num aces#{num_aces}"
-		end
-	num_aces.times do
-		if (sum + 11) < 21
-			sum += 11
-		else
-			sum += 10
-		end
-	end
-	sum
-end
-
-ahand = [["A","A"],["C", "A"], ["H", 10]]
-p add_hand ahand
-
-
-
 deck.shuffle
 player1.draw deck, 2
 dealer.draw deck, 2
 p player1.hand
 print "hit or stand? "
-move = gets.chomp
+move = gets.chomp 	#waits for user input, stores it in move, chomp cuts off trailing whitespace
 while move == "hit" do
 	player1.draw deck, 1 if move == "hit"
 	p player1.hand
@@ -100,13 +104,31 @@ while move == "hit" do
 end
 player_sum = add_hand player1.hand
 dealer_sum = add_hand dealer.hand
-print "Dealers hand: "
-p dealer.hand
-puts "your total: #{player_sum}
-dealer total: #{dealer_sum}"
 
+while dealer_sum <17 do
+	dealer.draw deck, 1
+	dealer_sum = add_hand dealer.hand
+end
+sleep(0.5)	#pauses the terminal for 0.5 seconds
+
+
+print "Dealers Hand: "
+p dealer.hand
+sleep(0.5)
+
+print "Player's Hand: "
+p player1.hand
+sleep(0.5)
+
+puts "your total: #{player_sum}"
+sleep(0.5)
+puts "dealer total: #{dealer_sum}"
+
+sleep(1)
 if player_sum > 21
 	puts "Over 21! You lose!"
+elsif dealer_sum >21
+	puts "Dealer bust! You win!"
 elsif player_sum > dealer_sum
 	puts "less than 21, more than the dealer, You Win!"
 elsif player_sum == dealer_sum
@@ -114,7 +136,8 @@ elsif player_sum == dealer_sum
 else
 	puts "dealer is more than you, You Lose!"
 end
-  
+sleep(1)
+
   
   #add the values, of player1
   #add the values of the dealer
