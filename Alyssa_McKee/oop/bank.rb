@@ -8,7 +8,7 @@ class BankAccount
 		@checking_balance = 0
 		@saving_balance = 0
 		@interest_rate = 0.01
-		@@acounts.next #adds 1 to accounts
+		@@acounts += 1
 	end
 	
 	def depositToSavings amount
