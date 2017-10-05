@@ -25,6 +25,7 @@ NOTE: If you don't get in at least one pull request daily, then *_ya ain't serio
 
 ## Videos
 Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs
+OOP - https://youtu.be/ooZ7Is26JaU
 Intro to Rails Models - https://youtu.be/xJg3kcTyJMI
 
 ## Resources
