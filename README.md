@@ -28,6 +28,7 @@ Ruby Fundamentals - https://youtu.be/XDJ60qVD6Cs <br>
 OOP - https://youtu.be/ooZ7Is26JaU <br>
 Intro to Rails Models - https://youtu.be/xJg3kcTyJMI <br>
 Many To Many - https://youtu.be/yyMdwiYOC5A <br>
+Self-Join Many To Many - https://youtu.be/SNbFoLRc5yA
 
 ## Resources
 
