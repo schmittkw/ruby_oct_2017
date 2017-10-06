@@ -30,6 +30,7 @@ Intro to Rails Models - https://youtu.be/xJg3kcTyJMI <br>
 Many To Many - https://youtu.be/yyMdwiYOC5A <br>
 Self-Join Many To Many - https://youtu.be/SNbFoLRc5yA <br>
 Basics of Controllers - https://youtu.be/-Ad9dmeu1oo <br>
+Intermediate Controllers - https://youtu.be/i8GMLwLzg3s <br>
 
 ## Resources
 
