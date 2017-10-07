@@ -1,7 +1,8 @@
 class Blog < ActiveRecord::Base
-	has_many :posts
+	has_many :posts, :dependent => :destroy
+	has_many :comments, as: :commentable
 	
-	has_many :owners, :dependent => :destroy
+	has_many :owners
 	has_many :users, through: :owners
 	
 	validates :name, :description, presence: true

@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
 	has_many :owners
 	has_many :blogs, through: :owners
-	
 	has_many :posts
-	
-	has_many :messages
+	has_many :comments, as: :commentable
+	has_many :messages, :dependent => :destroy
 	
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	
