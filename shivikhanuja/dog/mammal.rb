@@ -1,7 +1,7 @@
 class Mammal
     
     def initialize()
-       @health = 170
+       @health = 150
     end    
     def display_health()
        @health
