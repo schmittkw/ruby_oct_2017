@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
-  get '' => 'users#index'
 
-  get 'users/hello' 
+  get '' => 'users#begin'
 
-  get 'users/sayinghello'
 
-  get 'users/hellojoe' 
 
-  # get 'users/hello/michael' => 'users#hellojoe'
 
-  get 'users/times' => 'users#times'
 
-  get 'users/times/restart' => 'users#destroy_session'
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

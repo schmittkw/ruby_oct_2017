@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
+  #the root route is the '/' route or '' route
+  root 'users#index'
 
-  get '' => 'users#index'
-
-  get 'users/hello' 
-
-  get 'users/sayinghello'
-
-  get 'users/hellojoe' 
-
-  # get 'users/hello/michael' => 'users#hellojoe'
-
-  get 'users/times' => 'users#times'
-
-  get 'users/times/restart' => 'users#destroy_session'
+  get 'success' => 'users#success'
+  post 'users' => 'users#create', as: 'users_create'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
