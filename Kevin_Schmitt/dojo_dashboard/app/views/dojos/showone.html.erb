@@ -1,0 +1,8 @@
+<h2>Branch name: <%= @one.branch %></h2>
+<h3>Street: <%= @one.street %></h3>
+<h3>City: <%= @one.city %></h3>
+<h3>State: <%= @one.state %></h3>
+<p><a href='<%= edit_one_path(@one.id) %>'>Edit</a></p>
+<p><a href='<%= delete_one_path(@one.id) %>' data-method='delete'>Delete</a></p>
+<p><a href='<%= new_student_path(@one.id) %>'>Add Student</a></p>
+<p><a href='<%= dojo_show_path %>'>Go Back</a></p>
