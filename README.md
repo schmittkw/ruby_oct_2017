@@ -31,6 +31,7 @@ Many To Many - https://youtu.be/yyMdwiYOC5A <br>
 Self-Join Many To Many - https://youtu.be/SNbFoLRc5yA <br>
 Basics of Controllers - https://youtu.be/-Ad9dmeu1oo <br>
 Intermediate Controllers - https://youtu.be/i8GMLwLzg3s <br>
+Sessions and Models Cover - https://youtu.be/mUX9UiKlq6Q <br>
 
 ## Resources
 
