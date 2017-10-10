@@ -18,6 +18,7 @@ class DojosController < ApplicationController
   end
   def showone
     @one = Dojo.find(params[:id])
+    @students = Student.where(dojo_id: params[:id])
     render 'dojos/showone'
   end
   def delete
@@ -45,7 +46,6 @@ class DojosController < ApplicationController
     render 'dojos/student_new'
   end
   def create_student
-    puts params
     student = Student.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -56,12 +56,29 @@ class DojosController < ApplicationController
     puts student.errors
     if student.valid?
       student.save
-      return redirect_to '/' #goes back to previous page
+      return redirect_to '/' 
     end
-    return redirect_to :back
+    return redirect_to :back #goes back to previous page
+  end
+  def edit_student
+    @student = Student.find(params[:id])
+    render 'dojos/student_edit'
+  end
+  def update_student
+    student = Student.find(params[:id])
+    student.update(student_params)
+    redirect_to "/show/#{student.dojo.id}"
+  end
+  def delete_student
+    go = Student.find(params[:id])
+    go.delete
+    return redirect_to :back     #:back #goes back to previous page
   end
   private
     def dojo_params
       params.require(:dojo).permit(:branch, :street, :city, :state)
+    end
+    def student_params
+      params.require(:student).permit(:first_name, :last_name, :email)
     end
 end
