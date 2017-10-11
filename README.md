@@ -32,6 +32,8 @@ Self-Join Many To Many - https://youtu.be/SNbFoLRc5yA <br>
 Basics of Controllers - https://youtu.be/-Ad9dmeu1oo <br>
 Intermediate Controllers - https://youtu.be/i8GMLwLzg3s <br>
 Sessions and Models Cover - https://youtu.be/mUX9UiKlq6Q <br>
+Ninja Gold https://youtu.be/Bjoyp3_CWV0 <br>
+Ruby TDD - https://youtu.be/8bIpaxANung <br>
 
 ## Resources
 
