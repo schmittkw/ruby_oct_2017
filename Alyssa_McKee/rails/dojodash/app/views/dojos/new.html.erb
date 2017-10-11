@@ -1,6 +1,9 @@
 <h1>New Dojo</h1>
-<ul><% flash[:notice].each do |error| %>
-		<li><%= error %></li>
+<ul>
+	<% if flash[:notice] %>
+		<% flash[:notice].each do |error| %>
+			<li><%= error %></li>
+		<% end %>
 	<% end %>
 </ul>
 
@@ -25,4 +28,4 @@
 	<button type="submit">Create</button>
 </form>
 
-<a href="/dojos">Go Back</a>
+<a href="<%= landing_path %>">Go Back</a>
