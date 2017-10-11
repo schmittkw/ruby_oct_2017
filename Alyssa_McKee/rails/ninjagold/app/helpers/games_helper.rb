@@ -1,7 +1,4 @@
 module GamesHelper
-	def farm
-		puts "\n\n\n\n\n\n\n\n\n\nfarm\n\n\n\n\n\n\n\n\n\n"
-	end
 	def payout
 		gold = 0
 		case params[:building]
@@ -27,11 +24,13 @@ module GamesHelper
 			activity[:message] = "earned #{gold} gold from the #{building}!"
 		elsif gold <0
 			activity[:color] = "loss"
-			activity[:message] = "lost #{gold} from the #{building} ... :("
+			activity[:message] = "lost #{gold} gold from the #{building} ... T-T "
 		else gold
 			activity[:color] = "tie"
 			activity[:message] = "went to the #{building} and broke even"
 		end
+		
+		activity[:message]+= " (#{DateTime.now.strftime("%Y/%m/%d %I:%M %p")})"		
 		
 		session[:activities].unshift activity		
 	end
