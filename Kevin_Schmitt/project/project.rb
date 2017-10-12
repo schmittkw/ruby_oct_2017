@@ -23,18 +23,24 @@ class Project
     def initialize name, description
       @name = name
       @description = description
-      @owner = owner
+      @owner = ""
       @tasks = []
     end
     def elevator_pitch
       "#{@name}, #{@description}"
     end
     def tasks
-        @tasks.each do |task|
-            puts task
-        end
+        # @tasks.each do |task|
+        #     puts task
+        # end
+        @tasks
     end
     def add_tasks val
         @tasks.insert(-1, val)
+    end
+    def print_tasks
+        @tasks.each do |i|
+            puts i
+        end
     end
 end
