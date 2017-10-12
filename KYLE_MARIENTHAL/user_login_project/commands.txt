@@ -1,0 +1,19 @@
+retrieve all users
+  User.all
+
+get the first user
+  User.first
+
+get the last user
+  User.last
+
+users sorted by their first name (order by first_name DESC)
+  User.order(:first_name).reverse
+
+Get the record of the user whose id is 3 and UPDATE the person's
+last_name to something else. Know how to do this directly in the
+console using .find and .save.
+  user = User.find(6)
+
+Know how to delete a record of a user whose id is 6
+   User.delete(6)

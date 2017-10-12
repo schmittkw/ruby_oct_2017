@@ -21,6 +21,19 @@
 # alpha
 
 # Generate an array with 10 random numbers between 55-100 and have it be sorted (showing the smallest number in the beginning). Display all the numbers in the array. Next, display the minimum value in the array as well as the maximum value
-random_array = []
-10.times {random_array.push rand(55..100)}
-p random_array
+# random_array = []
+# 10.times {random_array.push rand(55..100)}
+# p random_array.sort
+# p random_array.min
+# p random_array.max
+
+# Create a random string that is 5 characters long (hint: (65+rand(26)).chr returns a random character)
+# p (0...5).map {(65 + rand(26)).chr}.join
+
+# Generate an array with 10 random strings that are each 5 characters long
+arr = []
+# rand_str = (0...5).map {(65 + rand(26)).chr}.join
+10.times do
+  arr << (0...5).map {(65 + rand(26)).chr}.join
+end
+p arr
