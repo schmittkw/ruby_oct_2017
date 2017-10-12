@@ -53,3 +53,19 @@
 #   end
 
 
+# arr = [1, 3, 5, 7]
+# y = 3
+# puts arr.count { |elem| elem > y }
+# # //////////
+
+# arr = [1, 5, 10, -2]
+# puts arr.map! { |elem| elem * elem }
+
+# arr = [1, 5, 10, -2]
+# puts arr.each_index { |index| arr[index] = 0 if arr[index] < 0 }
+
+# arr = [1, 5, 10, -2]
+# { max: arr.max, min: arr.min, average: arr.reduce(:+) / arr.length.to_f }
+
+
+
