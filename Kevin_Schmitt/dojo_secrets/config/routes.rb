@@ -2,18 +2,18 @@ Rails.application.routes.draw do
   # get 'sessions/new'
   root 'users#new'
 
-  get 'register'     => 'users#new', as: 'new_register'
+  get 'register'     => 'users#new',        as: 'new_register'
   get 'users/new'    => 'users#new'
   #create user
-  post 'register'    => 'users#create', as: 'register'
+  post 'register'    => 'users#create',     as: 'register'
   post 'users'       => 'users#create'
   #show user
-  get 'users/:id'    => 'users#show', as: 'user'
+  get 'users/:id'    => 'users#show',       as: 'user'
   #New Login
-  get 'login'        => 'sessions#new', as: 'new_login'
+  get 'login'        => 'sessions#new',     as: 'new_login'
   get 'sessions/new' => 'sessions#new'
   #Login
-  post 'login'       => 'sessions#create', as: 'login'
+  post 'login'       => 'sessions#create',  as: 'login'
   post 'sessions'    => 'sessions#create'
   #Logout
   delete 'logout'    => 'sessions#destroy', as: 'logout'

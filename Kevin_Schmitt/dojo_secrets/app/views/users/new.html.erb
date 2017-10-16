@@ -18,7 +18,7 @@
             <!-- Email  -->
             <div class="form-group">
                 <%# <label for="exampleInputEmail1">Email address</label> %>
-                <input name='user[email]' type="email" class="form-control" placeholder="Enter email">
+                <input name='user[email]' type="email" class="form-control" placeholder="Email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <!-- Password  -->
@@ -42,6 +42,12 @@
                 <button type="submit" class="btn btn-primary">Register</button>
             </div>
         </form>
+    <form method='get' action='/login'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <div>
+            <button type="submit" class="btn btn-warning">Already Registered</button>
+        </div>
+    </form>
     </div>
     <div class='col-md-2'></div>
 </div>
