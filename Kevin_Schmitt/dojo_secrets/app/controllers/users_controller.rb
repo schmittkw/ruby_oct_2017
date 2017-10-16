@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
     def new
+        if current_user
+            return redirect_to user_path current_user.id
+        end
+        return render 'users/new'
     end
 
     def create
@@ -15,8 +19,19 @@ class UsersController < ApplicationController
     end
 
     def show
-        # @user = User.find(session[:user_id])
-        @user = User.find(params[:id])
+        @user = User.find(session[:user_id])
+        # @user = User.find(params[:id])
+    end
+
+    def edit
+        @user = User.find(session[:user_id])
+        render 'users/edit'
+    end
+
+    def update
+        user = User.find(session[:user_id])
+        user.update(user_params) 
+        return redirect_to "/users/#{user.id}"        
     end
 
     private

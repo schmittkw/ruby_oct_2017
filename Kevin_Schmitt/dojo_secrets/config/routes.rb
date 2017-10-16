@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post 'users'       => 'users#create'
   #show user
   get 'users/:id'    => 'users#show',       as: 'user'
+  #edit/update
+  get 'edit/:id'     => 'users#edit', as: 'edit'
+  patch 'update/:id'   => 'users#update', as: 'update'
   #New Login
   get 'login'        => 'sessions#new',     as: 'new_login'
   get 'sessions/new' => 'sessions#new'
