@@ -44,7 +44,8 @@ Student Dashboard - https://youtu.be/qlRMAj-uolY <br>
 Authentication I - https://youtu.be/TC9qH6kuNR0 <br>
 
 Belt Reviewer I - https://youtu.be/Y1mGT0ZkpVo <br>
-
+Belt Reviewer II (Models) - https://youtu.be/qEna4cnton8 <br>
+Belt Reviewer III (Controllers) - https://youtu.be/PId5O-MWpGk <br>
 
 ## Resources
 
