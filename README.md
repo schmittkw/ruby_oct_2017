@@ -38,6 +38,14 @@ Rails TDD Part I - https://youtu.be/mkvg--izmm0 <br>
 Rails TDD Part II - https://youtu.be/vPjHE7Rtsss <br>
 Dojo Secrets Setup - https://youtu.be/ZhZzJKEOl3Y <br>
 Login and Registration - https://youtu.be/m0K3NeEPo7E <br>
+Porting Login and Registration - https://youtu.be/9HIhp34OiX4 <br>
+Dojo Dashboard - https://youtu.be/QgjHRgisXEc <br>
+Student Dashboard - https://youtu.be/qlRMAj-uolY <br>
+Authentication I - https://youtu.be/TC9qH6kuNR0 <br>
+
+Belt Reviewer I - https://youtu.be/Y1mGT0ZkpVo <br>
+Belt Reviewer II (Models) - https://youtu.be/qEna4cnton8 <br>
+Belt Reviewer III (Controllers) - https://youtu.be/PId5O-MWpGk <br>
 
 ## Resources
 
