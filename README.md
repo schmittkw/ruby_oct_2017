@@ -47,6 +47,8 @@ Belt Reviewer I - https://youtu.be/Y1mGT0ZkpVo <br>
 Belt Reviewer II (Models) - https://youtu.be/qEna4cnton8 <br>
 Belt Reviewer III (Controllers) - https://youtu.be/PId5O-MWpGk <br>
 
+Self Join Many To Many - https://youtu.be/fhCNn1XTuy0 <br>
+
 ## Resources
 
 [Ruby v2.3.1 Documentation](http://ruby-doc.org/core-2.3.1/ "Ruby v2.3.1 Documentation") <br>
