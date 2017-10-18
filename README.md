@@ -46,6 +46,9 @@ Authentication I - https://youtu.be/TC9qH6kuNR0 <br>
 Belt Reviewer I - https://youtu.be/Y1mGT0ZkpVo <br>
 Belt Reviewer II (Models) - https://youtu.be/qEna4cnton8 <br>
 Belt Reviewer III (Controllers) - https://youtu.be/PId5O-MWpGk <br>
+Belt Reviewer IV (Finshing Out) - https://youtu.be/XsWiIbpZfD4 <br>
+
+Self Join Many To Many - https://youtu.be/fhCNn1XTuy0 <br>
 
 ## Resources
 
