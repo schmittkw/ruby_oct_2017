@@ -1,32 +1,31 @@
 Rails.application.routes.draw do
-  
-  # get 'sessions/new'
-  root 'users#new'
-  
-  # secrets
-  get 'secrets/show' => 'secrets#show', as: 'secrets'
-  post 'secrets/create' => 'secrets#create', as: 'create_secret'
-  delete 'destroy/secret/:id' => 'secrets#destroy', as: 'destroy_secret'
-  post 'like/secret/:id' => 'secrets#like', as: 'like'
-  delete 'unlike/secret/:id' => 'secrets#unlike', as: 'unlike'
-  get 'thisissupersecretlink/noway' => 'secrets#show_all'
+  get 'events/show'
 
-  get 'register'     => 'users#new',        as: 'new_register'
-  get 'users/new'    => 'users#new'
+  root 'users#new'
+
+
+  get 'users/new' => 'users#new'
+
+  get 'events' => 'events#show', as: 'events'
+
+  post 'events' => 'events#create', as: 'create_event'
+
+  delete 'events/:id' => 'events#destroy', as: 'destroy_event'
+
+
+
+
+
+
+
+  # #New Login
+  # get 'login'        => 'sessions#new',     as: 'new_login'
+  # get 'sessions/new' => 'sessions#new'
+  post 'login'       => 'sessions#create',  as: 'login'
+  post 'sessions'    => 'sessions#create'
   #create user
   post 'register'    => 'users#create',     as: 'register'
   post 'users'       => 'users#create'
-  #show user
-  get 'users/:id'    => 'users#show',       as: 'user'
-  #edit/update
-  get 'edit/:id'     => 'users#edit', as: 'edit'
-  patch 'update/:id'   => 'users#update', as: 'update'
-  #New Login
-  get 'login'        => 'sessions#new',     as: 'new_login'
-  get 'sessions/new' => 'sessions#new'
-  #Login
-  post 'login'       => 'sessions#create',  as: 'login'
-  post 'sessions'    => 'sessions#create'
   #Logout
   delete 'logout'    => 'sessions#destroy', as: 'logout'
   delete 'sessions'  => 'sessions#destroy'
