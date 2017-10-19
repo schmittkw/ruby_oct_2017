@@ -12,6 +12,14 @@ Rails.application.routes.draw do
 
   delete 'events/:id' => 'events#destroy', as: 'destroy_event'
 
+  get 'events/:id' => 'events#showone', as: 'showone'
+
+  post 'attend/:id' => 'attends#create', as: 'attend'
+
+  delete 'leave/:id' => 'attends#leave', as: 'leave'
+
+  post 'message/:id' => 'messages#create', as:'message'
+
 
 
 

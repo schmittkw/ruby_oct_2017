@@ -8,19 +8,27 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def showone
+    @event = Event.find(params[:id])
+  end
+
   def create
     event = Event.create(event_params)
-    unless event.valid?
-      flash[:errors] = event.errors.full_messages
+    if event.valid?
+      Attend.create(user: current_user, event: event)
       return redirect_to :back
     end
+    flash[:errors] = event.errors.full_messages
     return redirect_to :back
   end
 
   def destroy
     event = Event.find(params[:id])
-    event.delete
-    return redirect_to :back
+    if current_user.id == event.user_id
+      event.delete
+      return redirect_to :back
+    end
+    return redirect_to :back 
   end
 
   private

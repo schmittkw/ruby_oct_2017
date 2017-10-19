@@ -1,4 +1,5 @@
-<h1>Events</h1>
+<h1>Welcome, <%= current_user.first_name.capitalize %></h1>
+from <%= current_user.state %>
 <div class='row'>
 <table class='table'>
     <thead>
@@ -13,14 +14,20 @@
         <% @events.each do |event| %>
             <% if current_user.state == event.state %>
                 <tr>
-                    <td><%= event.name %></td>
+                    <td><a href='<%= showone_path event.id %>'><%= event.name %></a></td>
                     <td><%= event.state %></td>
                     <td><%= event.date %></td>
-                    <% if current_user.id == event.user_id %>
+                    <% if current_user == event.user %>
                         <td><a href='<%= destroy_event_path event.id %>' data-method='delete'>Cancel</a></td>
+                    <% else %>
+                        <% unless event.attendees.include? current_user %>
+                            <td><a href='<%= attend_path event.id %>' data-method='post'>Join</a></td>
+                        <% end %>
                     <% end %>
-                    <% unless current_user.id == event.user_id %>
-                        <td><a href=''>Join</a></td>
+                    <% if event.attendees.include? current_user %>
+                        <% unless current_user == event.user %>
+                            <td><p>Already Joined</p><a href='<%= leave_path event.id %>' data-method='delete'>Leave</a></td>
+                        <% end %>
                     <% end %>
                 </tr>
             <% end %>
@@ -83,14 +90,20 @@
         <% @events.each do |event| %>
             <% unless current_user.state == event.state %>
                 <tr>
-                    <td><%= event.name %></td>
+                    <td><a href="<%= showone_path(event.id) %>"><%= event.name %></a></td>
                     <td><%= event.state %></td>
                     <td><%= event.date %></td>
-                    <% if current_user.id == event.user_id %>
+                    <% if current_user == event.user %>
                         <td><a href='<%= destroy_event_path event.id %>' data-method='delete'>Cancel</a></td>
+                    <% else %>
+                        <% unless event.attendees.include? current_user %>
+                            <td><a href='<%= attend_path event.id %>' data-method='post'>Join</a></td>
+                        <% end %>
                     <% end %>
-                    <% unless current_user.id == event.user_id %>
-                        <td><a href=''>Join</a></td>
+                    <% if event.attendees.include? current_user %>
+                        <% unless current_user == event.user %>
+                            <td><p>Already Joined</p><a href='<%= leave_path event.id %>' data-method='delete'>Leave</a></td>
+                        <% end %>
                     <% end %>
                 </tr>
             <% end %>
