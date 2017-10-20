@@ -1,9 +1,25 @@
 Rails.application.routes.draw do
+  get 'ideas/show'
+
   root 'users#index'
   
   get 'users/index'
 
   get 'users/show' => 'users#show', as: 'logged_in'
+
+  post 'idea' => 'ideas#create', as: 'new_idea'
+
+  get 'user/:id' => 'users#showone', as: 'showone'
+
+  delete 'idea/delete/:id' => 'ideas#destroy', as: 'destroy_idea'
+
+  get 'oneidea/:id' => 'ideas#oneidea', as: 'oneidea'
+
+  post 'like/idea/:id' => 'likes#like', as: 'like_idea'
+
+  delete 'unlike/idea/:id' => 'likes#unlike', as: 'unlike_idea'
+
+  
 
 
 

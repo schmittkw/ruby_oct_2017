@@ -63,11 +63,11 @@ generate new ssh key
 
 ### Pulling Rails project into AWS EC2 ###
 > sudo git clone {{GITHUB_URL}}
-> sudo chown ubuntu -R {{name_of_rails_project}}
-> cd {{name_of_rails_project}}
+> sudo chown ubuntu -R {{repo name}}
+> cd {{repo name}}
 > bundle install
 > sudo touch log/development.log
-> sudo chmod 0666 /var/www/<your_rails_project>/log/development.log
+> sudo chmod 0666 /var/www/<repo name>/log/development.log
 > sudo vim config/database.yml
     Update username
     > username: ubuntu
@@ -104,7 +104,7 @@ server {
     server_name <public_ip_address>; 
     passenger_enabled on; 
     passenger_app_env development; 
-    root /var/www/<your_project_folder>/public;
+    root /var/www/<repo name>/public;
 }
 
 > sudo ln -s /etc/nginx/sites-available/rails.conf /etc/nginx/sites-enabled/rails.conf
