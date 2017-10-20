@@ -23,6 +23,10 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    attends = Attend.where(event_id: params[:id])
+    attends.each {|a| a.delete}
+    messages = Message.where(event_id: params[:id])
+    messages.each {|a| a.delete}
     event = Event.find(params[:id])
     if current_user.id == event.user_id
       event.delete
