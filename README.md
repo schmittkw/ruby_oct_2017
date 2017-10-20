@@ -50,6 +50,8 @@ Belt Reviewer IV (Finshing Out) - https://youtu.be/XsWiIbpZfD4 <br>
 
 Self Join Many To Many - https://youtu.be/fhCNn1XTuy0 <br>
 
+Relations are Hard - https://youtu.be/YW6X53ia2Z8 <br>
+
 Deployment - https://youtu.be/V2Frb35zpBA <br>
 
 ## Resources
