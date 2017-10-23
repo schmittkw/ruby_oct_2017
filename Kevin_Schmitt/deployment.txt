@@ -10,7 +10,7 @@ generate new ssh key
 
 # Navigate to directory where we downloaded our key.pem file
 # Only have to run the following command once
-> chmod 400 <key>.pem
+> chmod 400 <key>.pem #only if first time using that PEM file
 > ssh -i <key>.pem ubuntu@<public.ip.address>
     # If prompted to 'Are you sure you want to continue connecting?' then, type yes and enter
     > yes
