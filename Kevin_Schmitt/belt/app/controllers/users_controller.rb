@@ -8,7 +8,17 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      @ideas = Idea.all #be sure to order by likes 
+      @ideas = Idea.joins('left join likes on likes.idea_id = ideas.id').group(:id).order('count(likes.id) desc') 
+      #be sure to order by likes 
+
+      #@ideas = Idea.all.sort { |a, b| b.likes.count <=> a.likes.count }
+
+        # probably fastest query method for sorting by # of likes
+      #@ideas = Idea.includes(:likes).group(:id, 'likes.id').order('count(likes.id) desc').references(:likes)
+
+      # if using counter_cache
+      #@ideas = Idea.order(likes_count: :desc)
+
       return render 'users/show'
     end
     # if current_user
