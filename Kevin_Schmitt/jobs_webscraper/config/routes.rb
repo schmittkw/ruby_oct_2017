@@ -1,40 +1,11 @@
 Rails.application.routes.draw do
-  get 'ideas/show'
+  # get 'searches/index'
 
-  root 'users#index'
-  
-  get 'users/index'
+  root 'searches#index'
 
-  get 'users/show' => 'users#show', as: 'logged_in'
+  post 'search' => 'searches#create', as: 'make_search'
 
-  post 'idea' => 'ideas#create', as: 'new_idea'
-  
-  get 'user/:id' => 'users#showone', as: 'showone'
-
-  delete 'idea/delete/:id' => 'ideas#destroy', as: 'destroy_idea'
-
-  get 'oneidea/:id' => 'ideas#oneidea', as: 'oneidea'
-
-  post 'like/idea/:id' => 'likes#like', as: 'like_idea'
-
-  delete 'unlike/idea/:id' => 'likes#unlike', as: 'unlike_idea'
-
-  
-
-
-
-  # #New Login
-  # get 'login'        => 'sessions#new',     as: 'new_login'
-  # get 'sessions/new' => 'sessions#new'
-  post 'login'       => 'sessions#create',  as: 'login'
-  post 'sessions'    => 'sessions#create'
-  #create user
-  post 'register'    => 'users#create',     as: 'register'
-  post 'users'       => 'users#create'
-  #Logout
-  delete 'logout'    => 'sessions#destroy', as: 'logout'
-  delete 'sessions'  => 'sessions#destroy'
-
+  get 'show' => 'searches#show', as: 'show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

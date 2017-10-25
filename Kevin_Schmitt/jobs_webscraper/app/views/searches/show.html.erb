@@ -1,0 +1,30 @@
+<h1>Show page</h1>
+<%= @result.title %>
+<%= @result.city %>,
+<%= @result.state %>
+    <form class='form-group' action='<%= root_path %>' method='get'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <div>
+            <button type="submit" class="btn btn-danger">Go Back</button>
+        </div>
+    </form>
+<hr>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Job Title</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @arr3.each do |job| %>
+        <tr>
+            <td><a href='<%= job[3] %>' target="_blank"><%= job[0] %></a></td>
+            <td><%= job[1] %></td>
+            <td><%= job[2] %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
