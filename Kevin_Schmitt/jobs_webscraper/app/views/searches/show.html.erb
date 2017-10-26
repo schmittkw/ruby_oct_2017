@@ -1,7 +1,9 @@
-<h1>Show page</h1>
-<%= @result.title %>
-<%= @result.city %>,
-<%= @result.state %>
+<h1>
+    <%= @result.title %> near
+    <%= @result.city %>,
+    <%= @result.state %>
+</h1>
+
     <form class='form-group' action='<%= root_path %>' method='get'>
         <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
         <div>
@@ -19,12 +21,49 @@
         </tr>
     </thead>
     <tbody>
-        <% @arr3.each do |job| %>
         <tr>
-            <td><a href='<%= job[3] %>' target="_blank"><%= job[0] %></a></td>
-            <td><%= job[1] %></td>
-            <td><%= job[2] %></td>
+            <td><h3>Monster.com</h3></td>
         </tr>
+        <% unless @arr6.empty? %>
+            <% @arr3.each do |job| %>
+                <tr>
+                    <td><a href='<%= job[3] %>' target="_blank"><%= job[0] %></a></td>
+                    <td><%= job[1] %></td>
+                    <td><%= job[2] %></td>
+                </tr>
+            <% end %>
         <% end %>
+        <tr>
+            <td><h3>Indeed.com</h3></td>
+        </tr>
+        <% unless @arr6.empty? %>
+            <% @arr6.each do |job| %>
+                <tr>
+                    <td><a href='<%= job[3] %>' target="_blank"><%= job[0] %></a></td>
+                    <td><%= job[1] %></td>
+                    <td><%= job[2] %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        <tr>
+            <td><h3>Dice.com</h3></td>
+        </tr>
+        <% unless @arr9.empty? %>
+            <% @arr9.each do |job| %>
+                <tr>
+                    <td><a href='<%= job[3] %>' target="_blank"><%= job[0] %></a></td>
+                    <td><%= job[1] %></td>
+                    <td><%= job[2] %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        
     </tbody>
 </table>
+<hr>
+<form class='form-group' action='<%= root_path %>' method='get'>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <div>
+        <button type="submit" class="btn btn-danger">Go Back</button>
+    </div>
+</form>
