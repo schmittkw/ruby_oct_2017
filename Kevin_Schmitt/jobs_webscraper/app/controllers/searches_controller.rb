@@ -17,7 +17,7 @@ class SearchesController < ApplicationController
         return redirect_to show_path
     end
 
-    flash[:errors] = user.errors.full_messages
+    flash[:errors] = search.errors.full_messages
     redirect_to :back
   end
 
