@@ -23,8 +23,10 @@ class SearchesController < ApplicationController
 
   def show
     @result = Search.last
-    arr1=[]
+
+    #Monster.com
     @arr3 = []
+    arr1=[]
     url = "https://www.monster.com/jobs/search/?q=#{@result.title}&where=#{@result.city}__2C-#{@result.state}"
     
       document = open(url)
@@ -59,7 +61,41 @@ class SearchesController < ApplicationController
         @arr3 = arr1
       end
 
+    url = "https://www.monster.com/jobs/search/?q=#{@result.title}&where=#{@result.city}__2C-#{@result.state}&page=2"
       
+      
+      document = open(url)
+      content = document.read
+      parsed_content = Nokogiri::HTML(content)
+
+
+
+      parsed_content.css('.js_result_details').each do |row|
+          title = row.css('.jobTitle').css('a').inner_text
+          link = row.css('.jobTitle').css('a').first.attributes['href'].inner_text
+          posted_at = row.css('time').first.inner_text
+          neigh_elem = row.css('.job-specs')
+
+        if neigh_elem.any?
+            neighborhood = neigh_elem.first.inner_text.strip
+        else
+            neighborhood = ''
+        end
+
+        arr2 = []
+        arr2.push(title)
+        arr2.push(neighborhood)
+        arr2.push(posted_at)
+        arr2.push(link)
+        arr1.push(arr2)
+        
+        @arr3 = arr1
+      end
+
+
+      
+
+      #Indeed.com
       arr4=[]
       @arr6 = []
       url = "https://www.indeed.com/jobs?q=#{ @result.title }&l=#{ @result.city }%2C+#{ @result.state }"
@@ -77,11 +113,6 @@ class SearchesController < ApplicationController
           neigh_elem = row.css('.location').inner_text
           
           neighborhood = neigh_elem
-        # if neigh_elem.any?
-        #     neighborhood = neigh_elem
-        # else
-        #     neighborhood = ''
-        # end
 
         arr5 = []
         arr5.push(title)
@@ -90,16 +121,37 @@ class SearchesController < ApplicationController
         arr5.push("https://www.indeed.com"+link)
         arr4.push(arr5)
         
-        # puts "#{title} #{neighborhood}"
-        # puts "Posted at #{posted_at}"
-        # puts '------------------------'
-        # puts ''
+        @arr6 = arr4
+      end
+
+      url = "https://www.indeed.com/jobs?q=#{ @result.title }&l=#{ @result.city }%2C+#{ @result.state }&start=10"
+      
+        document = open(url)
+        content = document.read
+        parsed_content = Nokogiri::HTML(content)
+  
+  
+  
+        parsed_content.css('.result').each do |row|
+          title = row.css('a').first.inner_text
+          link = row.css('a').first.attributes['href'].inner_text
+          posted_at = row.css('.date').inner_text
+          neigh_elem = row.css('.location').inner_text
+          
+          neighborhood = neigh_elem
+
+        arr5 = []
+        arr5.push(title)
+        arr5.push(neighborhood)
+        arr5.push(posted_at)
+        arr5.push("https://www.indeed.com"+link)
+        arr4.push(arr5)
+        
         @arr6 = arr4
       end
 
 
-
-
+      #Dice.com
       arr7=[]
       @arr9 = []
       url = "https://www.dice.com/jobs?q=#{ @result.title }&l=#{ @result.city }%2C+#{ @result.state }"
@@ -117,11 +169,6 @@ class SearchesController < ApplicationController
           neigh_elem = row.css('.location').inner_text
           
           neighborhood = neigh_elem
-        # if neigh_elem.any?
-        #     neighborhood = neigh_elem
-        # else
-        #     neighborhood = ''
-        # end
 
         arr8 = []
         arr8.push(title)
@@ -130,10 +177,6 @@ class SearchesController < ApplicationController
         arr8.push("https://www.dice.com"+link)
         arr7.push(arr8)
         
-        # puts "#{title} #{neighborhood}"
-        # puts "Posted at #{posted_at}"
-        # puts '------------------------'
-        # puts ''
         @arr9 = arr7
       end
 
